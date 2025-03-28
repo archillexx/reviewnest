@@ -10,4 +10,13 @@ const addReview = async (req, res) => {
     }
 };
 
+const getReviews = async (req, res) => {
+    try {
+        const reviews = await Review.find({ userId: req.user.id });
+        res.json(reviews);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
 module.exports = { getReviews, addReview, updateReview, deleteReview };
