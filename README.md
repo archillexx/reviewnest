@@ -1,68 +1,82 @@
-# **Assignment: Full-Stack CRUD Application Development with DevOps Practices**
+# Review Nest
 
-## **Objective**
+A full-stack web application for sharing and managing reviews on various products, built with the MERN stack and deployed on AWS.
 
-You have been provided with a starter project that includes user authentication using  **Node.js, React.js, and MongoDB**. Your task is to extend this application by implementing **CRUD (Create, Read, Update, Delete) operations** for a real-world application of your choice, while following industry best practices such as:
+## Features
 
-* **Project Management with JIRA**
-* **Requirement Diagram using SysML**
-* **Version Control using GitHub**
-* **CI/CD Integration for Automated Deployment**
+ **User Authentication**  
+- Secure login and registration system
 
-## **Requirements**
+ **CRUD Operations**  
+- Create, Read, Update, and Delete reviews
+- Intuitive review management interface
 
-### **1. Choose a Real-World Application**
+ **Responsive Design**  
+- Optimized for both desktop and mobile devices
 
-Select a meaningful use case for your CRUD operations. We will provide the list, you have to select it.
+ **Performance & Scalability**  
+- Cloud-hosted MongoDB database
+- Efficient API design
 
-### **2. Project Management with JIRA and SysML**
+## Tech Stack
 
-* Create a **JIRA project** and define:
-  * **Epic**
-  * **User Stories** (features required in your app)
-  * **Child issues & Subtasks** (breaking down development work)
-  * **Sprint Planning** (organizing work into milestones)
-* Document your JIRA **board URL** in the project README.
-* Draw a requirements diagram
+### Frontend
+- React.js
+- React Router
+- Tailwind CSS
 
-### **3. Backend Development (Node.js + Express + MongoDB)**
+### Backend
+- Node.js
+- Express.js
 
-* Create a user-friendly interface to interact with your API (Some portion developed, follow task manager app)).
-* Implement **forms** for adding and updating records.
-* Display data using  **tables, cards, or lists (Follow how we showed data in task manager app)**
+### Database
+- MongoDB (MongoDB Atlas)
 
-### **4. Frontend Development (React.js)**
+### Infrastructure
+- **Hosting**: AWS EC2
+- **Reverse Proxy**: Nginx
+- **CI/CD**: GitHub Actions + AWS
 
-* Create a user-friendly interface to interact with your API (**Some portion developed, follow task manager app)**.
-* Implement **forms** for adding, showing, deleting and updating records (CRUD).
-* Display data using  **tables, cards, or lists (Follow how we showed data in task manager app)**
+## Installation & Setup
 
-### **5. Authentication & Authorization**
+### Prerequisites
+- Node.js (v16+ recommended)
+- MongoDB (local or MongoDB Atlas)
+- Git
 
-* Ensure **only authenticated users** can access and perform CRUD operations. (Already developed in your project)
-* Use **JWT (JSON Web Tokens)** for user authentication (Use the task manager one from .env file).
+### Local Development
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/review-nest.git
+   cd review-nest
+2. Install dependencies for both frontend and backend:
+   ```bash
+   # Install backend dependencies
+   cd server
+   npm install
 
-### **6. GitHub Version Control & Branching Strategy**
+   # Install frontend dependencies
+   cd ../client
+   npm install
+4. Set up environment variables:
 
-* Use **GitHub for version control** and maintain:
-  * `main` branch (stable production-ready code)
-  * Feature branches (`feature/xyz`) for each new functionality
-* Follow proper **commit messages** and  **pull request (PR) reviews** .
+    Create .env files in both server and client directories
 
-### **7. CI/CD Pipeline Setup**
+    Sample variables are provided in .env.example files
 
-* Implement a **CI/CD pipeline using GitHub Actions** to:
-  * Automatically **run tests** on every commit/pull request (Optional).
-  * Deploy the **backend** to **AWS** .
-  * Deploy the **frontend** to **AWS**.
-* Document your  **CI/CD workflow in the README** .
+5. Start the development servers:
+   ```bash
 
-## **Submission Requirements**
+    # From project root
+    cd server && npm run dev & cd ../client && npm start
 
-* **JIRA Project Board URL** (user stories ).
-* **Requirment diagram** (Using project features)
-* **GitHub Repository** (`backend/` and `frontend/`).
-* **README.md** with:
+7. The app should now be running on http://localhost:3000 with the backend on http://localhost:5001.
+   Deployment
 
-  * Project setup instructions.
-  * CI/CD pipeline details.
+   The production version is deployed on AWS EC2 with:
+ 
+    Nginx as reverse proxy
+
+    PM2 for process management
+
+    Automated CI/CD pipeline via GitHub Actions
