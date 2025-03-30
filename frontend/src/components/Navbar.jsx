@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 text-white p-4 flex justify-between items-center">
       {/* Logo and App Name */}
-      <Link to="/reviews/all" className="flex items-center text-2xl font-bold">
+      <Link to="/" className="flex items-center text-2xl font-bold">
         <img src={logo} alt="Review Nest Logo" className="h-10 w-10 mr-2" /> 
         Review Nest
       </Link>
