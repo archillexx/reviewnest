@@ -10,6 +10,15 @@ const addReview = async (req, res) => {
     }
 };
 
+const getAllReviews = async (req, res) => {
+    try {
+      const reviews = await Review.find().populate('userId', 'name');
+      res.json(reviews);
+    } catch (error) {
+      res.status(500).json({ message: 'Server Error' });
+    }
+  };
+
 const getReviews = async (req, res) => {
     try {
         const reviews = await Review.find({ userId: req.user.id });
@@ -49,4 +58,4 @@ const deleteReview = async (req, res) => {
     }
 };
 
-module.exports = { getReviews, addReview, updateReview, deleteReview };
+module.exports = { getReviews, addReview, updateReview, deleteReview, getAllReviews };
