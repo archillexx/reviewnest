@@ -15,6 +15,7 @@ const Login = () => {
       login(response.data);
       navigate('/reviews');
     } catch (error) {
+      console.log(error)
       alert('Login failed. Please try again.');
     }
   };
