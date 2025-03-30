@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react';
-import { useAuth } from '../context/AuthContext';
-import { useNavigate } from 'react-router-dom';
 import axiosInstance from '../axiosConfig';
 import PublicReviewList from '../components/PublicReviewList';
 
 const Home = () => {
-  const { user } = useAuth();
-  const navigate = useNavigate();
+  
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
@@ -23,16 +20,9 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">Welcome to Product Reviews</h1>
-      {!user && (
-        <button
-          onClick={() => navigate('/login')}
-          className="px-4 py-2 bg-blue-500 text-white rounded"
-        >
-          Login to Post a Review
-        </button>
-      )}
+    <div className=" justify-center container mx-auto p-6">
+      <h1 className="text-center text-3xl font-bold mb-4">Product Reviews</h1>
+      
       <PublicReviewList reviews={reviews} setReviews={setReviews} />
     </div>
   );
