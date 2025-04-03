@@ -36,7 +36,7 @@ const Navbar = () => {
         ) : (
           <>
             <Link to="/login" className="w-1/3 px-4 py-2 bg-gray-500 text-white rounded-xl mr-2 bg-gray-600 text-white px-4 py-2 rounded border-2 border-gray-600 transition-all duration-300 
-                         hover:bg-gray-300 hover:text-gray-600">Login to post a Review</Link>
+                         hover:bg-gray-300 hover:text-gray-600"> Post a Review</Link>
             <Link
               to="/register"
               className="w-1/3 px-4 py-2 bg-gray-500 text-white rounded-xl mr-2 bg-gray-600 text-white px-4 py-2 rounded border-2 border-gray-600 transition-all duration-300 
